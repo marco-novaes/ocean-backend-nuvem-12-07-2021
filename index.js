@@ -7,11 +7,11 @@ const { MongoClient, ObjectId } = require("mongodb");
 
     console.info("Conectando ao banco de dados...");
 
-    //const client = await MongoClient.connect(url, { useUnifiedTopology: true });
+    const client = await MongoClient.connect(url, { useUnifiedTopology: true });
 
     console.info("MongoDB conectado com sucesso!");
 
-    //const db = client.db(dbName);
+    const db = client.db(dbName);
 
     const app = express();
 
@@ -42,8 +42,8 @@ const { MongoClient, ObjectId } = require("mongodb");
     const lista = ["Senhor dos Anéis", "Harry Potter"];
     //              0                   1
 
-    //const filmes = db.collection("filmes");
-    const filmes = undefined;
+    const filmes = db.collection("filmes");
+    
 
     // [GET] - Read All
     app.get("/filmes", async (req, res) => {
