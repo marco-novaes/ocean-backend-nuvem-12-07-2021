@@ -2,8 +2,8 @@ const express = require("express");
 const { MongoClient, ObjectId } = require("mongodb");
 
 (async () => {
-    const url = "mongodb://localhost:27017";
-    const dbName = "ocean_bancodados_09_07_2021";
+    const url = "mongodb+srv://admin:UE8yn07GOpY2SKQn@cluster0.7fu0x.mongodb.net/ocean_db?retryWrites=true&w=majority";
+    const dbName = "ocean_db";
 
     console.info("Conectando ao banco de dados...");
 
@@ -43,7 +43,6 @@ const { MongoClient, ObjectId } = require("mongodb");
     //              0                   1
 
     const filmes = db.collection("filmes");
-    
 
     // [GET] - Read All
     app.get("/filmes", async (req, res) => {
